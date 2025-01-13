@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<title>Fuel Consumption</title>
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="../static/bootstrap.min.css" />
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="../static/style.css" />
+
+</head>
+<body style="background-image: url("bk2.jpg");">
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="booking-cta">
+							<h1>Fuel Consumption Prediction Model using Machine Learning</h1>
+							<h2>{{ prediction_text }}</h2>
+						</div>
+					</div>
+					<div class="col-md-7 col-md-offset-1">
+						<div class="booking-form">
+							<form action= {{ url_for("predict") }} method= 'post'>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Engine Size (L)</span>
+											<input class="form-control" name="engine" type="text" placeholder="Enter a Engine Size (L)" required>
+										</div>
+									</div>
+									
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Make</span>
+											<select name="make" class="form-control">
+												<option value="#">Select a value</option>
+												<option value="Ford">Ford</option>
+												<option value="Chevrolet">Chevrolet</option>
+												<option value="Mercedes-Benz">Mercedes-Benz</option>
+												<option value="Porsche">Porsche</option>
+												<option value="BMW">BMW</option>
+												<option value="GMC">GMC</option>
+												<option value="Toyota">Toyota</option>
+												<option value="Nissan">Nissan</option>
+												<option value="Honda">Honda</option>
+												<option value="Hyundai">Hyundai</option>
+												<option value="Dodge">Dodge</option>
+												<option value="Jeep">Jeep</option>
+												<option value="Audi">Audi</option>
+												<option value="MINI">MINI</option>
+												<option value="Lexus">Lexus</option>
+												<option value="Jaguar">Jaguar</option>
+												<option value="Mazda">Mazda</option>
+												<option value="Volkswagen">Volkswagen</option>
+												<option value="Kia">Kia</option>
+												<option value="Ram">Ram</option>
+												<option value="Cadillac">Cadillac</option>
+												<option value="Subaru">Subaru</option>
+												<option value="Land Rover">Land Rover</option>
+												<option value="Buick">Buick</option>
+												<option value="Volvo">Volvo</option>
+												<option value="Lincoln">Lincoln</option>
+												<option value="Acura">Acura</option>
+												<option value="Infiniti">Infiniti</option>
+												<option value="Maserati">Maserati</option>
+												<option value="Mitsubishi">Mitsubishi</option>
+												<option value="Chrysler">Chrysler</option>
+												<option value="Lamborghini">Lamborghini</option>
+												<option value="Alfa Romeo">Alfa Romeo</option>
+												<option value="Genesis">Genesis</option>
+												<option value="Rolls-Royce">Rolls-Royce</option>
+												<option value="Aston Martin">Aston Martin</option>
+												<option value="FIAT">FIAT</option>
+												<option value="Bentley">Bentley</option>
+												<option value="Bugatti">Bugatti</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Fuel_Type</span>
+											<select name="fuel" class="form-control">
+												<option value="#">Select a value</option>
+												<option value="X">X</option>
+												<option value="Z">Z</option>
+												<option value="E">E</option>
+												<option value="D">D</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Cylinders</span>
+											<select name="cylinders" class="form-control">
+												<option value="#">Select a value</option>
+												<option value="4">4</option>
+												<option value="6">6</option>
+												<option value="8">8</option>
+												<option value="12">12</option>
+												<option value="3">3</option>
+												<option value="10">10</option>
+												<option value="5">5</option>
+												<option value="16">16</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Fuel_Consumption_City</span>
+											<input class="form-control" type="text" name="Fuel_Consumption_City" placeholder="Enter the value" required>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Fuel_Consumption_Hwy</span>
+											<input class="form-control" type="text" name="Fuel_Consumption_Hwy" placeholder="Enter the value" required>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-btn">
+									<button class="submit-btn">Predict</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
